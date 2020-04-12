@@ -1,0 +1,33 @@
+#!/bin/python
+
+import sys
+import socket
+from datetime import datetime as dt
+
+if len(sys.argv) == 2:
+	target = socket.gethostnamebyname(srv.argv[1])
+else:
+	print("syntax inválida")
+	print("erro de syntax")
+print ("." * 50)
+print("scanning targert "+target)
+print("time started: "+str(dt.now()))
+print("."* 50)
+try:
+	for port in range (50,81):
+	s = socket.socket (socket.AF_INET, socket.SOCK_STREAM)
+	socket.setdefaulttimeout(1)
+	result = s.connect_ex((target.port))
+		print (A verificar porta {}.format(port))
+	s.close()
+	
+exept KeyboardInterrupt:
+	print("\nExiging programing.")
+	sys.exit()
+	
+exept socket.gaierror:
+	print ("Hostname não valido")
+	sys.exit()
+exept socket.error:
+	print("Impossivel conectar ao servidor")
+sys.exit()
