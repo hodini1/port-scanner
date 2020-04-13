@@ -7,18 +7,18 @@ from datetime import datetime as dt
 if len(sys.argv) == 2:
 	target = socket.gethostnamebyname(srv.argv[1])
 else:
-	print("syntax inválida")
-	print("erro de syntax")
+	print("invalid syntax")
+	print("syntax error")
 print ("." * 50)
 print("scanning targert "+target)
 print("time started: "+str(dt.now()))
 print("."* 50)
 try:
-	for port in range (50,81):
+	for port in range (50,81): #you can change the port range
 	s = socket.socket (socket.AF_INET, socket.SOCK_STREAM)
 	socket.setdefaulttimeout(1)
 	result = s.connect_ex((target.port))
-		print (A verificar porta {}.format(port))
+		print (checking the port {}.format(port))
 	s.close()
 	
 exept KeyboardInterrupt:
@@ -26,8 +26,8 @@ exept KeyboardInterrupt:
 	sys.exit()
 	
 exept socket.gaierror:
-	print ("Hostname não valido")
+	print ("Not valid hostname")
 	sys.exit()
 exept socket.error:
-	print("Impossivel conectar ao servidor")
+	print("Impossible to connect to the server")
 sys.exit()
